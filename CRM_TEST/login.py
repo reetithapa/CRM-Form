@@ -8,10 +8,11 @@ def login(driver):
 
     wait = WebDriverWait(driver, 10)
     #assert "login" in driver.current_url, "User is not directed to login page"
-
     login_page = wait.until(EC.visibility_of_element_located((By.XPATH, "//h1[text()='Sign in to your account']")))
     print("Sign in to your account visible")
-    #wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "svg"))).click()
+
+    wait.until(EC.visibility_of_element_located((By.XPATH, "//button[text()=' Clear']"))).click()
+
     company_code = wait.until(EC.visibility_of_element_located((By.XPATH, "//input[@placeholder='Enter code']")))
     company_code.send_keys("ctn")
 
@@ -25,6 +26,10 @@ def login(driver):
     login_button.click()
 
     print("Login Successful")
+
+
+
+
 
 
 
