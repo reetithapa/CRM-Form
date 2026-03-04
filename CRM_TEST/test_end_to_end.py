@@ -1,8 +1,6 @@
 from driver_setup import setup_driver
 from login import login
-from test_homepage import homepage
-from test_crm import crm_displayed
-from CRM_form import crm_form
+from CRM_form import crm_form, crm_displayed, crm_leads, all_leads, lead_details_page
 from selenium.webdriver.common.by import By
 import time
 
@@ -12,11 +10,15 @@ def complete_test():
     try:
         login(driver)
 
-        homepage(driver)
-
         crm_displayed(driver)
 
         crm_form(driver)
+
+        crm_leads(driver)
+
+        all_leads(driver)
+
+        lead_details_page(driver)
 
         time.sleep(10)
 
