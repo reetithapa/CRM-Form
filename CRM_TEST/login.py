@@ -17,10 +17,10 @@ def login(driver):
     company_code.send_keys("ctn")
 
     username = driver.find_element(By.ID, ":r1:")
-    username.send_keys("reeti")
+    username.send_keys("hello")
 
     password = driver.find_element(By.ID, ":r2:")
-    password.send_keys("Reeti@123")
+    password.send_keys("world")
 
     login_button = driver.find_element(By.XPATH, "//button[text()='Login']")
     login_button.click()
